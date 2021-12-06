@@ -1,13 +1,13 @@
-FROM node:12.19.0-alpine3.9 AS development
+FROM node:current-alpine3.12 AS development
 WORKDIR /usr/src/app
 COPY package*.json ./
 
-RUN npm install glob rimraf
+RUN npm install glob rimraf ansi-styles
 RUN npm install --only=development
 COPY . .
 
 RUN npm run build
-FROM node:12.19.0-alpine3.9 as production
+FROM node:current-alpine3.12 as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
