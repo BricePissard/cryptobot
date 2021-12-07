@@ -24,4 +24,4 @@ spec:
     - port: 3005
       targetPort: 3005
   selector:
-    app: cluster-cryptobot
+    app: nginx-cryptobot
