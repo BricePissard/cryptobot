@@ -16,12 +16,14 @@ $ npm install
 
 ```bash
 # development
+$ docker-compose up dev
 $ npm run start
 
 # watch mode
 $ npm run start:dev
 
 # production mode
+$ docker-compose up prod
 $ npm run start:prod
 ```
 
@@ -38,20 +40,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## GKE
+## GitHub Settings
+
+## GKE Settings
 
 The container is published in Google Kubernetes Engine (GKE).
 A YAML file place in ./github/workflow/google.yml
 explain how to publish the app.
 Each time a GIT push is set on branch `main`
 
+- https://console.cloud.google.com/iam-admin/serviceaccounts?project=cryprobot&supportedpurview=project
+- https://github.com/BricePissard/cryptobot/settings/secrets/actions
 - https://console.cloud.google.com/kubernetes/list/overview?project=cryprobot
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## 
 
 ## License
 
