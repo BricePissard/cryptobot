@@ -1,7 +1,3 @@
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
@@ -9,7 +5,7 @@
 ## Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
 ## Running the app
@@ -49,11 +45,16 @@ A YAML file place in ./github/workflow/google.yml
 explain how to publish the app.
 Each time a GIT push is set on branch `main`
 
-- https://console.cloud.google.com/iam-admin/serviceaccounts?project=cryprobot&supportedpurview=project
-- https://github.com/BricePissard/cryptobot/settings/secrets/actions
-- https://console.cloud.google.com/kubernetes/list/overview?project=cryprobot
+- <https://console.cloud.google.com/iam-admin/serviceaccounts?project=cryprobot&supportedpurview=project>
+- <https://github.com/BricePissard/cryptobot/settings/secrets/actions>
+- <https://console.cloud.google.com/kubernetes/list/overview?project=cryprobot>
 
-## 
+### Command Line
+
+```bash
+gcloud container clusters list --project cryprobot
+gcloud container clusters describe cluster-cryptobot --zone europe-west1-b
+```
 
 ## License
 
