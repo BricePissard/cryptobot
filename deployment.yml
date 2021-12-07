@@ -17,12 +17,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gke-test
+  name: nestjs-container
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gke-test
+      app: nestjs-container
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -31,12 +31,11 @@ spec:
   template:
     metadata:
       labels:
-        app: gke-test
+        app: nestjs-container
     spec:
       containers:
-      - name: gke-test
-        #image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
-        image: nestjs-api-prod:1.0.0
+      - name: nestjs-container
+        image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
         ports:
         - containerPort: 3005
         resources:
