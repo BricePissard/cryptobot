@@ -17,12 +17,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cluster-cryptobot
+  name: nginx-cryptobot
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cluster-cryptobot
+      app: nginx-cryptobot
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -31,11 +31,12 @@ spec:
   template:
     metadata:
       labels:
-        app: cluster-cryptobot
+        app: nginx-cryptobot
     spec:
       containers:
-      - name: cluster-cryptobot
-        image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
+      - name: nginx-cryptobot
+        #image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
+        image: nestjs-api-prod:1.0.0
         ports:
         - containerPort: 3005
         resources:
