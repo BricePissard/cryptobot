@@ -17,12 +17,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nestjs-container
+  name: nestjs-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nestjs-container
+      app: nestjs-app
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -31,10 +31,10 @@ spec:
   template:
     metadata:
       labels:
-        app: nestjs-container
+        app: nestjs-app
     spec:
       containers:
-      - name: nestjs-container
+      - name: nestjs-app
         image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
         ports:
         - containerPort: 3005
