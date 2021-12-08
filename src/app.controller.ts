@@ -1,8 +1,12 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 
+/**
+ * App First Controller
+ */
 @Controller()
 export class AppController {
+  // eslint-disable-next-line no-unused-vars
   constructor(private readonly appService: AppService) {}
 
   @Get()

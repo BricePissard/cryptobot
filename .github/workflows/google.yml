@@ -24,7 +24,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }} # This secret is set in GitHub SECRET: https://github.com/BricePissard/cryptobot/settings/secrets/actions
   
   # === GKE Cluster / GKE Zone
-# @see https://console.cloud.google.com/kubernetes/list/overview?project=cryprobot
+  # @see https://console.cloud.google.com/kubernetes/list/overview?project=cryprobot
   GKE_CLUSTER: cluster-cryptobot    # TODO: update to cluster name
   GKE_ZONE: europe-west1-b	        # TODO: update to cluster zone
   
