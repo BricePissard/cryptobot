@@ -1,7 +1,5 @@
+const DEFAULT_SERVER_PORT = 3005;
+
 export default () => ({
-  port: parseInt(process.env.PORT, 10) || 3005,
-  database: {
-    host: process.env.DATABASE_HOST,
-    port: parseInt(process.env.DATABASE_PORT, 10) || 5432,
-  },
+  port: parseInt(process.env.PORT, 10) || DEFAULT_SERVER_PORT,
 });

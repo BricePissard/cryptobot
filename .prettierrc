@@ -1,5 +1,10 @@
 {
   "singleQuote": true,
-  "trailingComma": "all",
-  "prettier.semi": false
+  "trailingComma": "none",
+  "prettier.semi": false,
+  "useTabs": false,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "noSemi": true,
+  "rcVerbose": true
 }
