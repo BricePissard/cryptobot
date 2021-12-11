@@ -17,11 +17,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nestjs-container-service
+  name: cryptobot-service
 spec:
   type: LoadBalancer
   ports:
     - port: 3005
       targetPort: 3005
   selector:
-    app: nestjs-app
+    app: cryptobot-app
