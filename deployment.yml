@@ -35,7 +35,8 @@ spec:
     spec:
       containers:
       - name: cryptobot-app
-        image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
+        #image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
+        image: gcr.io/cryprobot/cryptobot-image:latest
         ports:
         - containerPort: 3005
         resources:
