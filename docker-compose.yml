@@ -23,7 +23,7 @@ services:
     tty: true
     environment:
       - NODE_ENV=development
-      - PORT=3001
+      - PORT=3005
       - GUARD=none
       - EXCHANGE=binance
       - CONFIGFILE=config.binance.e2e.yaml
