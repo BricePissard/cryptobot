@@ -17,12 +17,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nestjs-app
+  name: cryptobot-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nestjs-app
+      app: cryptobot-app
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -31,10 +31,10 @@ spec:
   template:
     metadata:
       labels:
-        app: nestjs-app
+        app: cryptobot-app
     spec:
       containers:
-      - name: nestjs-app
+      - name: cryptobot-app
         image: LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY/IMAGE:TAG
         ports:
         - containerPort: 3005

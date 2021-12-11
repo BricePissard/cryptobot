@@ -130,7 +130,7 @@ gcloud container clusters describe cluster-cryptobot --zone europe-west1-b
 Execute this command to deploy the app in Google Cloud Run
 
 ```bash
-gcloud run deploy cryptobot --image=gcr.io/cryprobot/cryptobot-image:latest --concurrency=1 --max-instances=2 --timeout=60 --region=europe-west1 --memory=128Mi --port=3005 --set-env-vars=GUARD=none,EXCHANGE=binance,CONFIGFILE=config.binance.yaml --no-allow-unauthenticated --service-account=760852405393-compute@developer.gserviceaccount.com --platform=managed
+gcloud run deploy cryptobot-service --image=gcr.io/cryprobot/cryptobot-image:latest --concurrency=1 --max-instances=2 --timeout=60 --region=europe-west1 --memory=128Mi --port=3005 --set-env-vars=GUARD=none,EXCHANGE=binance,CONFIGFILE=config.binance.yaml --no-allow-unauthenticated --service-account=760852405393-compute@developer.gserviceaccount.com --platform=managed
 ```
 
 The `service-account` comes from here:
