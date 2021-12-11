@@ -31,7 +31,7 @@ env:
   # === GKE Deployment Name
   # @see https://console.cloud.google.com/kubernetes/workload/overview?project=cryprobot&pageState=(%22savedViews%22:(%22i%22:%227b4ddeb43387422a92c9bd5920da9088%22,%22c%22:%5B%5D,%22n%22:%5B%5D))
   DEPLOYMENT_NAME: nestjs-app       # TODO: update to deployment name
-  IMAGE: static-site
+  IMAGE: cryptobot-image
   
 jobs:
   setup-build-publish-deploy:
@@ -84,7 +84,7 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |-
-        ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+        ./kustomize edit set image gcr.io/cryprobot/cryptobot-image:latest=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
         ./kustomize build . | kubectl apply -f -
         kubectl rollout status deployment/$DEPLOYMENT_NAME
         kubectl get services -o wide
