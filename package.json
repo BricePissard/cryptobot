@@ -23,6 +23,7 @@
     "postinstall": "cp -a ../node_modules/source-map-support ./node_modules/source-map-support"
   },
   "dependencies": {
+    "-": "^0.0.1",
     "@google-cloud/secret-manager": "^3.10.1",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^1.1.5",
@@ -32,9 +33,13 @@
     "dotenv": "^10.0.0",
     "gaxios": "^4.3.2",
     "js-yaml": "^4.1.0",
+    "map": "^1.0.1",
+    "path": "^0.12.7",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "source": "^0.0.3",
+    "support": "^1.1.4"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
