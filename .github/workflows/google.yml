@@ -82,6 +82,7 @@ jobs:
         chmod u+x ./kustomize
 
     # Deploy the Docker image to the GKE cluster
+    # ./kustomize edit set image gcr.io/PROJECT_ID/IMAGE:TAG=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
     - name: Deploy
       run: |-
         ./kustomize edit set image gcr.io/cryprobot/cryptobot-image:latest=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
