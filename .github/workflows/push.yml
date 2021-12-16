@@ -40,6 +40,7 @@ jobs:
     - name: SSH and deploy node app
       uses: appleboy/ssh-action@master
       # @see https://github.com/BricePissard/cryptobot/settings/secrets/actions
+      # bgsfTTyiwj8%$#vhiO90!!!jVodpgpowe%WWepkfa
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
@@ -47,8 +48,9 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ~/cryptobot
-          echo ${{ secrets.SSH_PASSWORD }} | sudo rm *.lock
+          echo '${{ secrets.SSH_PASSWORD }}' | sudo rm *.lock
           git pull origin main
-          echo ${{ secrets.SSH_PASSWORD }} | rm -rf 
-          echo ${{ secrets.SSH_PASSWORD }} | install --production
-          echo ${{ secrets.SSH_PASSWORD }} | yarn start:prod
+          echo '${{ secrets.SSH_PASSWORD }}' | rm -rf 
+          echo '${{ secrets.SSH_PASSWORD }}' | install --production
+          cp src/services/configs/*.yaml dist/services/configs/
+          echo '${{ secrets.SSH_PASSWORD }}' | yarn start:prod
