@@ -50,8 +50,8 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ~/cryptobot
-          echo ${{ SSH_PASSWORD }} | sudo rm *.lock
+          echo ${{ SSH_PASSWORD }} \| sudo rm *.lock
           git pull origin main
-          echo ${{ SSH_PASSWORD }} | rm -rf 
-          echo ${{ SSH_PASSWORD }} | install --production
-          echo ${{ SSH_PASSWORD }} | yarn start:prod
+          echo ${{ SSH_PASSWORD }} \| rm -rf 
+          echo ${{ SSH_PASSWORD }} \| install --production
+          echo ${{ SSH_PASSWORD }} \| yarn start:prod
