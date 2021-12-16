@@ -6,35 +6,35 @@
  */
 export interface BotRequest {
   // Asset of interests (ie. ETH from ticker ETHBTC)
-  asset: string;
+  asset: string
   // What your asset is priced in (ie. BTC from ticker ETHBTC)
-  denominator: string;
+  denominator: string
   // Amount to sell (optional)
-  amount?: number | undefined;
+  amount?: number | undefined
   // Closing price (aka. {{close}} in TradingView)
-  price?: number | undefined;
+  price?: number | undefined
   // Time of alert (aka. {{time}} in TradingView)
-  time?: string | undefined;
+  time?: string | undefined
   // Dip buying configuration in terms of
   // Y % buying power allocate to X % drop in price
   // eslint-disable-next-line no-use-before-define
-  dip?: Dip[] | undefined;
+  dip?: Dip[] | undefined
 }
 
 export interface Asset {
-  amount: number;
-  currency_code: string;
-  available?: number;
+  amount: number
+  currency_code: string
+  available?: number
 }
 
 export interface Balance {
-  balances: Asset[];
-  total: Asset;
+  balances: Asset[]
+  total: Asset
 }
 
 export interface Dip {
-  percent: number;
-  allocation: number;
+  percent: number
+  allocation: number
 }
 
 // eslint-disable-next-line no-shadow
