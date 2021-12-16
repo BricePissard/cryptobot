@@ -5,7 +5,7 @@ on:
       - main
 
 env: 
-  NODE_ENV: dev
+  SSH_PASSWORD: bgsfTTyiwj8%$#vhiO90!!!jVodpgpowe%WWepkfa
 
 jobs:
   test:
@@ -50,6 +50,8 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ~/cryptobot
+          echo ${{ SSH_PASSWORD }} | sudo rm *.lock
           git pull origin main
-          yarn install --production
-          yarn start:prod
+          echo ${{ SSH_PASSWORD }} | rm -rf 
+          echo ${{ SSH_PASSWORD }} | install --production
+          echo ${{ SSH_PASSWORD }} | yarn start:prod
