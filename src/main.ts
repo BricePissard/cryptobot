@@ -1,48 +1,48 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { NestFactory } from '@nestjs/core';
+import { NestFactory } from '@nestjs/core'
 
-import { BitFlyer } from './bitflyer.module';
-import { Binance } from './binance.module';
-import { TradingViewGuard } from './guard/tradingview.guard';
-import 'source-map-support/register';
-require('dotenv').config();
+import { BitFlyer } from './bitflyer.module'
+import { Binance } from './binance.module'
+import { TradingViewGuard } from './guard/tradingview.guard'
+import 'source-map-support/register'
+require('dotenv').config()
 
-const GUARDS = ['tradingview', 'none'].map((guard) => guard.toLowerCase());
-const EXCHANGES = ['bitflyer', 'binance'];
-const GUARD_ERROR = `Authorization guard not specified. Set GUARD env variable to one of: ${GUARDS.toString()}`;
-const EXCHANGE_ERROR = `Exchange not specified. Set EXCHANGE env variable to one of: ${EXCHANGES.toString()}`;
+const GUARDS = ['tradingview', 'none'].map((guard) => guard.toLowerCase())
+const EXCHANGES = ['bitflyer', 'binance']
+const GUARD_ERROR = `Authorization guard not specified. Set GUARD env variable to one of: ${GUARDS.toString()}`
+const EXCHANGE_ERROR = `Exchange not specified. Set EXCHANGE env variable to one of: ${EXCHANGES.toString()}`
 
 /**
  * Start Application
  */
 async function bootstrap() {
-  console.log('## bootstrap', process.env.CONFIGFILE);
-  let module: any;
+  console.log('## bootstrap', process.env.CONFIGFILE)
+  let module: any
   switch (process.env.EXCHANGE.toLowerCase()) {
     case 'bitflyer':
-      module = BitFlyer;
-      break;
+      module = BitFlyer
+      break
     case 'binance':
-      module = Binance;
-      break;
+      module = Binance
+      break
     default:
-      throw new Error(EXCHANGE_ERROR);
+      throw new Error(EXCHANGE_ERROR)
   }
-  const app = await NestFactory.create(module);
+  const app = await NestFactory.create(module)
   switch (process.env.GUARD.toLowerCase()) {
     case 'tradingview':
-      app.useGlobalGuards(new TradingViewGuard());
-      break;
+      app.useGlobalGuards(new TradingViewGuard())
+      break
     case 'none':
-      break;
+      break
     default:
-      throw new Error(GUARD_ERROR);
+      throw new Error(GUARD_ERROR)
   }
-  await app.listen(process.env.PORT);
-  console.log('Bot is running');
+  await app.listen(process.env.PORT)
+  console.log('Bot is running')
   console.log(`
   exchange:${process.env.EXCHANGE}
   guards: ${process.env.GUARD}
-  `);
+  `)
 }
-bootstrap();
+bootstrap()

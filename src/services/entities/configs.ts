@@ -1,4 +1,4 @@
 export interface Configs {
-  apiKey: string;
-  secretKey: string;
+  apiKey: string
+  secretKey: string
 }

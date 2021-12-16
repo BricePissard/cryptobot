@@ -29,11 +29,10 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
       
-      - name: Lint code
-        run: yarn lint
-      
-      - name: Run tests
-        run: yarn test
+      - name: Lint code (ESLint & Prettier) 
+        run: |-
+          yarn lint
+          yarn format
 
   deploy:
     name: Publish, and Deploy

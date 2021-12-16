@@ -1,4 +1,4 @@
-import { AssertionError } from 'assert';
+import { AssertionError } from 'assert'
 
 /**
  * Assert if the submit value is a `string`
@@ -6,7 +6,7 @@ import { AssertionError } from 'assert';
  */
 export function assertIsString(val: any): asserts val is string {
   if (typeof val !== 'string') {
-    throw new AssertionError({ message: 'Not a string!' });
+    throw new AssertionError({ message: 'Not a string!' })
   }
 }
 
@@ -15,9 +15,9 @@ export function assertIsString(val: any): asserts val is string {
  * @param {any[]} val to test
  */
 export function assertIsEmpty(val: any[]): asserts val is any[] {
-  const ONE = 1;
+  const ONE = 1
   if (val.length < ONE) {
-    throw new AssertionError({ message: 'Empty array!' });
+    throw new AssertionError({ message: 'Empty array!' })
   }
 }
 
@@ -28,16 +28,16 @@ export function assertIsEmpty(val: any[]): asserts val is any[] {
  */
 export function decimalPlaces(num: number) {
   const isInt = (n: number) => {
-    return n === Math.round(n) && !isNaN(n);
-  };
-
-  const a = Math.abs(num);
-  const TEN = 10;
-  const ONE = 1;
-  let c = a,
-    count = 1;
-  while (!isInt(c) && isFinite(c)) {
-    c = a * Math.pow(TEN, count++);
+    return n === Math.round(n) && !isNaN(n)
   }
-  return count - ONE;
+
+  const a = Math.abs(num)
+  const TEN = 10
+  const ONE = 1
+  let c = a,
+    count = 1
+  while (!isInt(c) && isFinite(c)) {
+    c = a * Math.pow(TEN, count++)
+  }
+  return count - ONE
 }
