@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { NestFactory } from '@nestjs/core';
+
 import { BitFlyer } from './bitflyer.module';
 import { Binance } from './binance.module';
 import { TradingViewGuard } from './guard/tradingview.guard';
 import 'source-map-support/register';
+require('dotenv').config();
 
 const GUARDS = ['tradingview', 'none'].map((guard) => guard.toLowerCase());
 const EXCHANGES = ['bitflyer', 'binance'];
@@ -13,6 +16,7 @@ const EXCHANGE_ERROR = `Exchange not specified. Set EXCHANGE env variable to one
  * Start Application
  */
 async function bootstrap() {
+  console.log('## bootstrap', process.env.CONFIGFILE);
   let module: any;
   switch (process.env.EXCHANGE.toLowerCase()) {
     case 'bitflyer':

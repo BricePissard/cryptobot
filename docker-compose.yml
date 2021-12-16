@@ -2,7 +2,6 @@ version: '3.9'
 
 services:
 
-  # == DEV ==
   dev:
     container_name: cryptobot_dev
     image: nestjs-api-dev:1.0.0
@@ -24,32 +23,6 @@ services:
     environment:
       - NODE_ENV=development
       - PORT=3005
-      - GUARD=none
-      - EXCHANGE=binance
-      - CONFIGFILE=config.binance.e2e.yaml
-
-  # == PROD ==
-  prod:
-    container_name: cryptobot_prod
-    image: nestjs-api-prod:1.0.0
-    build:
-      context: .
-      target: production
-      dockerfile: ./Dockerfile
-    command: yarn start:prod
-    ports:
-      - 3000:3000
-      - 9229:9229
-    networks:
-      - nesjs-network
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    restart: unless-stopped
-    tty: true
-    environment:
-      - NODE_ENV=development
-      - PORT=3001
       - GUARD=none
       - EXCHANGE=binance
       - CONFIGFILE=config.binance.e2e.yaml
