@@ -52,6 +52,6 @@ jobs:
           echo '${{ secrets.SSH_PASSWORD }}' | sudo fuser -k 3005/tcp
           echo '${{ secrets.SSH_PASSWORD }}' | sudo rm *.lock
           git pull origin main
-          echo '${{ secrets.SSH_PASSWORD }}' | yarn install
-          cp src/services/configs/*.yaml dist/services/configs/
-          echo '${{ secrets.SSH_PASSWORD }}' | yarn start:prod >/dev/null 2>&1
+          echo '${{ secrets.SSH_PASSWORD }}' | sudo yarn install
+          echo '${{ secrets.SSH_PASSWORD }}' | cp src/services/configs/*.yaml dist/services/configs/
+          echo '${{ secrets.SSH_PASSWORD }}' | sudo yarn start:prod >/dev/null 2>&1
