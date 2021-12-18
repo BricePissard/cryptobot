@@ -185,7 +185,7 @@ module.exports = {
     indent: [OFF, 2],
     'jsx-quotes': [WARN, 'prefer-double'],
     'linebreak-style': [WARN, 'unix'],
-    'lines-around-comment': [WARN, { beforeBlockComment: true }],
+    'lines-around-comment': [WARN, { beforeBlockComment: false }],
     'max-depth': [WARN, 8],
     'max-len': [WARN, 256],
     'max-nested-callbacks': [WARN, 8],

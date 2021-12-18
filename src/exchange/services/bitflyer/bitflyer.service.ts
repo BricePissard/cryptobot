@@ -1,14 +1,14 @@
 /* eslint-disable prettier/prettier */
-import { HttpException, HttpService, HttpStatus, Injectable } from '@nestjs/common'
+import { Observable, of, throwError, forkJoin } from 'rxjs'
 import { map, filter, mergeMap, toArray, concatMap, reduce, catchError } from 'rxjs/operators'
-import { BotConfigService } from '../../services/configs/botconfigs.service'
-import { Observable, of, throwError } from 'rxjs'
-import { ExchangeService } from '../exchange.service'
 import * as crypto from 'crypto'
-import { forkJoin } from 'rxjs'
-import { SecretsService } from '../../services/secrets/secrets.service'
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common'
+import { HttpService } from '@nestjs/axios'
+import { BotConfigService } from '../../../services/configs/botconfigs.service'
+import { ExchangeService } from '../../exchange.service'
+import { SecretsService } from '../../../services/secrets/secrets.service'
+import { Dip, OrderType } from '../../entities/exchange'
 import { BitFlyerAsset, BitFlyerBalance, BitFlyerSignature } from './bitflyer.entities'
-import { Dip, OrderType } from '../entities/exchange'
 // import { request } from 'gaxios';
 
 @Injectable()

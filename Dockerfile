@@ -1,4 +1,4 @@
-FROM node:current-alpine3.12 AS development
+FROM node:current-alpine3.12
 ARG NODE_ENV=development
 ENV NODE_ENV=${NODE_ENV}
 
@@ -11,8 +11,9 @@ RUN npm install
 
 COPY . .
 COPY package*.json yarn.lock tsconfig*.json ./
-COPY --from=development /usr/src/app/node_modules/ ./node_modules/
-COPY --from=development /usr/src/app/dist ./dist
+COPY /usr/src/app/node_modules/ ./node_modules/
+COPY /usr/src/app/dist/services/configs/ src/services/configs/*.yaml
+COPY /usr/src/app/dist ./dist
 
 RUN npm ci \
     && npm run build \

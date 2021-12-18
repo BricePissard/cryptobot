@@ -1,15 +1,16 @@
 /* eslint-disable prettier/prettier */
 import { Body, Controller, Post, Get, UseInterceptors, HttpException, HttpStatus } from '@nestjs/common'
 import { Observable, of } from 'rxjs'
-import { BotRequest, OrderType } from './entities/exchange'
-import { ExchangeService } from './exchange.service'
-import { assertIsString, assertIsEmpty } from '../utils/helper'
-import { ExchangeInterceptor } from '../guard/exchange.interceptor'
+import { BotRequest, OrderType } from '../entities/exchange'
+import { ExchangeService } from '../exchange.service'
+import { assertIsString, assertIsEmpty } from '../../utils/helper'
+import { ExchangeInterceptor } from '../../guard/exchange.interceptor'
+import { Logger, LoggerTypes } from 'src/utils'
 
 @Controller('exchange')
 export class ExchangeController {
   // eslint-disable-next-line no-unused-vars
-  constructor(private service: ExchangeService) {}
+  constructor(private service: ExchangeService | undefined) {}
 
   @UseInterceptors(ExchangeInterceptor)
   @Post('sell')
@@ -69,6 +70,7 @@ export class ExchangeController {
 
   @Get('health')
   health(): Observable<any> {
+    Logger.trace(LoggerTypes.CONTROLLER, 'ExchangeController.health()')
     return of({ status: 'OK' })
   }
 }

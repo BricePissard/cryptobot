@@ -1,14 +1,14 @@
 /* eslint-disable no-magic-numbers */
 /* eslint-disable prettier/prettier */
-import { HttpException, HttpService, HttpStatus, Injectable } from '@nestjs/common'
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common'
+import { HttpService } from '@nestjs/axios'
 import { map, filter, mergeMap, toArray, concatMap, reduce, catchError } from 'rxjs/operators'
-import { BotConfigService } from '../../services/configs/botconfigs.service'
-import { Observable, of, throwError } from 'rxjs'
-import { ExchangeService } from '../exchange.service'
 import * as crypto from 'crypto'
-import { forkJoin } from 'rxjs'
-import { SecretsService } from '../../services/secrets/secrets.service'
-import { Asset, Balance, OrderType } from '../entities/exchange'
+import { forkJoin, Observable, of, throwError } from 'rxjs'
+import { BotConfigService } from '../../../services/configs/botconfigs.service'
+import { ExchangeService } from '../../exchange.service'
+import { SecretsService } from '../../../services/secrets/secrets.service'
+import { Asset, Balance, OrderType } from '../../entities/exchange'
 // import { config } from 'yargs';
 // import { decimalPlaces } from '../../utils/helper';
 

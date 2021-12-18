@@ -6,7 +6,7 @@ import { ExchangeService } from './exchange/exchange.service'
 import { BotConfigService } from './services/configs/botconfigs.service'
 import { SecretsService } from './services/secrets/secrets.service'
 import configuration from './services/configs/configurations'
-import { BinanceExchange } from './exchange/services/binance/binance.service'
+import { KrakenExchange } from './exchange/services/kraken/kraken.service'
 
 @Module({
   imports: [
@@ -19,11 +19,11 @@ import { BinanceExchange } from './exchange/services/binance/binance.service'
   providers: [
     {
       provide: ExchangeService,
-      useClass: BinanceExchange
+      useClass: KrakenExchange
     },
     BotConfigService,
     SecretsService
   ],
   controllers: [ExchangeController]
 })
-export class Binance {}
+export class Kraken {}
