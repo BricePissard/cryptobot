@@ -7,6 +7,7 @@ import { Kraken } from './kraken.module'
 
 import { TradingViewGuard } from './guard/tradingview.guard'
 import 'source-map-support/register'
+import { Logger, LoggerTypes } from './utils'
 require('dotenv').config()
 
 const GUARDS = ['tradingview', 'none'].map((guard) => guard.toLowerCase())
@@ -19,7 +20,7 @@ const EXCHANGE_ERROR = `Exchange not specified. Set EXCHANGE env variable to one
  */
 async function bootstrap() {
   let module: any
-  switch (process.env.EXCHANGE.toLowerCase()) {
+  switch (process.env.EXCHANGE_NAME.toLowerCase()) {
     case 'bitflyer':
       module = BitFlyer
       break
@@ -33,9 +34,7 @@ async function bootstrap() {
       throw new Error(EXCHANGE_ERROR)
   }
 
-  const app = await NestFactory.create(module, {
-    logger: ['error', 'warn']
-  })
+  const app = await NestFactory.create(module)
 
   switch (process.env.GUARD.toLowerCase()) {
     case 'tradingview':
@@ -46,11 +45,12 @@ async function bootstrap() {
     default:
       throw new Error(GUARD_ERROR)
   }
+
   await app.listen(process.env.PORT)
-  console.log('Bot is running')
-  console.log(`
-  exchange:${process.env.EXCHANGE}
-  guards: ${process.env.GUARD}
-  `)
+
+  Logger.trace(LoggerTypes.INIT, 'main.bootstrap()', {
+    exchange: process.env.EXCHANGE_NAME,
+    guard: process.env.GUARD
+  })
 }
 bootstrap()

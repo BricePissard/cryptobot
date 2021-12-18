@@ -8,7 +8,7 @@
   "main": "dist/main.js",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "nest build",
+    "build": "nest build && yarn copy-files",
     "start": "nest start",
     "start:dev": "nest start 0.0.0.0:9229 --watch",
     "start:debug": "nest start --debug 0.0.0.0:9229 --watch",
@@ -19,11 +19,11 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "copy-files": "cp ./src/services/configs/*.yaml ./dist/services/configs/"
   },
   "dependencies": {
     "-": "^0.0.1",
-    "@google-cloud/secret-manager": "^3.10.1",
     "@nestjs/axios": "^0.0.3",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^1.1.5",
