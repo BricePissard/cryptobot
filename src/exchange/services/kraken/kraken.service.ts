@@ -60,7 +60,14 @@ export class KrakenExchange extends ExchangeService {
     Logger.trace(LoggerTypes.SERVICE, 'KrakenExchange.getTime()')
   }
 
-  async getPrice(ofProduct: string, priceIn: string) {
+  /**
+   * Get cryptocurrency value according to a specific FIA currency value.
+   *
+   * @param {string} ofProduct Crypto currency code, Ex 'BTC'
+   * @param {string} priceIn FIA currency code, Ex: 'EUR'
+   * @returns {Promise<any>}
+  */
+  async getPrice(ofProduct: string, priceIn: string): Promise<any> {
     const assets = await this.kraken.assets()
     Logger.trace(LoggerTypes.SERVICE, 'KrakenExchange.getPrice()', { ofProduct: ofProduct, priceIn: priceIn, assets: assets })
     return assets
