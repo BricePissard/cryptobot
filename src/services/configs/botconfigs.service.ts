@@ -14,7 +14,6 @@ export class BotConfigService {
   get settings(): any {
     if (!this.config) {
       this.config = this.configs.get<any>('configurations')
-
       Logger.trace(LoggerTypes.SERVICE, 'BotConfigService.settings()', { config: this.config })
     }
     return this.config

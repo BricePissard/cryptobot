@@ -70,7 +70,8 @@ export class ExchangeController {
 
   @Get('health')
   health(): Observable<any> {
-    Logger.trace(LoggerTypes.CONTROLLER, 'ExchangeController.health()')
+    const price = this.service.getPrice('BTC', 'EUR')
+    Logger.trace(LoggerTypes.CONTROLLER, 'ExchangeController.health()', { price: price })
     return of({ status: 'OK' })
   }
 }
