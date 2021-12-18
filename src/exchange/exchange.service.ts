@@ -1,7 +1,8 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
-import { Observable } from 'rxjs'
-import { HttpService, Injectable } from '@nestjs/common'
+// import { Observable } from 'rxjs'
+import { Injectable } from '@nestjs/common'
+import { HttpService } from '@nestjs/axios'
 import { SecretsService } from '../services/secrets/secrets.service'
 import { Dip, OrderType } from './entities/exchange'
 
@@ -9,7 +10,7 @@ import { Dip, OrderType } from './entities/exchange'
 export abstract class ExchangeService {
   constructor(protected httpService: HttpService, protected secretService: SecretsService) {}
 
-  abstract getPrice(ofProduct: string, priceIn: string): Observable<any>
+  abstract getPrice(ofProduct: string, priceIn: string): any
 
   abstract getBalance(priceIn: string): any
 

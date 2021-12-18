@@ -2,12 +2,13 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { BitFlyerExchange } from './bitflyer.service'
 import { of } from 'rxjs'
-import { HttpModule, HttpService, HttpException, HttpStatus } from '@nestjs/common'
+import { HttpException, HttpStatus } from '@nestjs/common'
+import { HttpModule, HttpService } from '@nestjs/axios'
 import { ConfigModule } from '@nestjs/config'
-import configuration from '../../services/configs/configurations'
-import { BotConfigService } from '../../services/configs/botconfigs.service'
-import { SecretsService } from '../../services/secrets/secrets.service'
-import { OrderType } from '../entities/exchange'
+import configuration from '../../../services/configs/configurations'
+import { BotConfigService } from '../../../services/configs/botconfigs.service'
+import { SecretsService } from '../../../services/secrets/secrets.service'
+import { OrderType } from '../../entities/exchange'
 
 describe('ExchangeService', () => {
   let service: BitFlyerExchange

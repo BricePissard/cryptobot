@@ -39,6 +39,7 @@ jobs:
     steps:
     - name: SSH and deploy node app
       uses: appleboy/ssh-action@master
+      # @see https://github.com/appleboy/ssh-action
       # @see https://github.com/BricePissard/cryptobot/settings/secrets/actions
       # bgsfTTyiwj8%$#vhiO90!!!jVodpgpowe%WWepkfa
       with:

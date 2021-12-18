@@ -1,20 +1,21 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-magic-numbers */
-import { Test, TestingModule } from '@nestjs/testing'
-import { ExchangeController } from './exchange.controller'
-import { ExchangeService } from './exchange.service'
-import { HttpModule, HttpService } from '@nestjs/common'
-import { ConfigModule } from '@nestjs/config'
-import configuration from '../services/configs/configurations'
-import { BotConfigService } from '../services/configs/botconfigs.service'
-import { SecretsService } from '../services/secrets/secrets.service'
 import { of } from 'rxjs'
-import { BotRequest, OrderType } from './entities/exchange'
-import { BinanceExchange } from './services/binance.service'
+import { Test, TestingModule } from '@nestjs/testing'
+import { ConfigModule } from '@nestjs/config'
+import { HttpModule, HttpService } from '@nestjs/axios'
+import configuration from '../../services/configs/configurations'
+import { BotConfigService } from '../../services/configs/botconfigs.service'
+import { SecretsService } from '../../services/secrets/secrets.service'
+import { BotRequest, OrderType } from '../entities/exchange'
+import { BitFlyerAsset } from '../services/bitflyer/bitflyer.entities'
+import { BitFlyerExchange } from '../services/bitflyer/bitflyer.service'
+import { ExchangeService } from '../exchange.service'
+import { ExchangeController } from './exchange.controller'
 
 describe('ExchangeController', () => {
   let controller: ExchangeController
-  let service: BinanceExchange
+  let service: BitFlyerExchange | ExchangeService
   let httpClient: HttpService
   let secrets: any
   let config: BotConfigService
@@ -27,9 +28,28 @@ describe('ExchangeController', () => {
     time: undefined
   }
 
+  const dipReq: BotRequest = {
+    asset: 'BTC',
+    denominator: 'JPY',
+    dip: [
+      {
+        percent: 10,
+        allocation: 10
+      },
+      {
+        percent: 20,
+        allocation: 20
+      },
+      {
+        percent: 30,
+        allocation: 40
+      }
+    ]
+  }
+
   const allAsset = {
     balances: [
-      { currency_code: 'USDT', amount: 42260, available: 17360 },
+      { currency_code: 'JPY', amount: 42260, available: 17360 },
       { currency_code: 'BTC', amount: 0.02357742, available: 0.02357742 },
       { currency_code: 'ETH', amount: 0.039944, available: 0.039944 }
     ],
@@ -39,39 +59,23 @@ describe('ExchangeController', () => {
     }
   }
 
+  const assetPrice = {
+    amount: 40000000,
+    currency_code: 'BTC'
+  } as BitFlyerAsset
+
   const orderResponse = {
     status: 200,
     statusText: 'OK',
     headers: {},
     config: {},
     data: {
-      symbol: 'BTCUSDT',
-      orderId: 2763259,
-      orderListId: -1,
-      clientOrderId: 'my_order_id_1',
-      transactTime: 1621122100613,
-      price: '0.00000000',
-      origQty: '0.01000000',
-      executedQty: '0.00004200',
-      cummulativeQuoteQty: '1.96040586',
-      status: 'EXPIRED',
-      timeInForce: 'GTC',
-      type: 'MARKET',
-      side: 'SELL',
-      fills: [
-        {
-          price: '46676.33000000',
-          qty: '0.00004200',
-          commission: '0.00000000',
-          commissionAsset: 'USDT',
-          tradeId: 753445
-        }
-      ]
+      child_order_acceptance_id: 'JRF20150707-050237-639234'
     }
   }
 
   beforeEach(async () => {
-    process.env.CONFIGFILE = 'config.binance.sample.yaml'
+    process.env.CONFIGFILE = 'config.bitflyer.sample.yaml'
     secrets = {
       getSecret: jest.fn().mockResolvedValue('huh?')
     }
@@ -87,7 +91,7 @@ describe('ExchangeController', () => {
       providers: [
         {
           provide: ExchangeService,
-          useClass: BinanceExchange
+          useClass: BitFlyerExchange
         },
         BotConfigService,
         { provide: SecretsService, useValue: secrets }
@@ -96,7 +100,7 @@ describe('ExchangeController', () => {
 
     config = module.get<BotConfigService>(BotConfigService)
     httpClient = module.get<HttpService>(HttpService)
-    service = new BinanceExchange(httpClient, config, secrets)
+    service = new BitFlyerExchange(httpClient, config, secrets)
     controller = new ExchangeController(service)
   })
 
@@ -105,7 +109,7 @@ describe('ExchangeController', () => {
       asset: undefined,
       denominator: undefined
     } as any)
-    await expect(result).rejects.toThrow()
+    expect(result).rejects.toThrow()
   })
 
   it('Should throw when sell parameter type is not correct', async () => {
@@ -113,7 +117,7 @@ describe('ExchangeController', () => {
       asset: undefined,
       denominator: undefined
     } as any)
-    await expect(result).rejects.toThrow()
+    expect(result).rejects.toThrow()
   })
 
   it('Should buy correctly when amount is undefined', async () => {
@@ -124,6 +128,19 @@ describe('ExchangeController', () => {
 
     expect(getBalance).toBeCalledWith('BTC')
     expect(buyService).toBeCalledWith('ETH', 'BTC', OrderType.Market, undefined)
+    expect(response).toEqual(orderResponse.data)
+  })
+
+  it('Should buy with fiat', async () => {
+    jest.spyOn(httpClient, 'post').mockReturnValueOnce(of(orderResponse))
+    const getPrice = jest.spyOn(service, 'getPrice').mockReturnValueOnce(of(assetPrice))
+    const buyService = jest.spyOn(service, 'buy')
+    const botRegWithPrice = Object.assign({}, botReq)
+    botRegWithPrice.price = 10000
+    const response = await controller.makeBuyOrderWithFiat(botRegWithPrice)
+
+    expect(getPrice).toBeCalled()
+    expect(buyService).toBeCalledWith('ETH', 'BTC', OrderType.Market, 0.00025)
     expect(response).toEqual(orderResponse.data)
   })
 
@@ -162,5 +179,45 @@ describe('ExchangeController', () => {
     expect(getBalance).not.toBeCalled()
     expect(sellService).toBeCalledWith('ETH', 'BTC', 2)
     expect(response).toEqual(orderResponse.data)
+  })
+
+  it('Should buy the dip', async () => {
+    jest.spyOn(httpClient, 'post').mockReturnValue(of(orderResponse))
+    const getBalance = jest.spyOn(service, 'getBalance').mockResolvedValueOnce(allAsset)
+    jest.spyOn(service, 'getPrice').mockReturnValue(
+      of({
+        amount: 50000,
+        currency_code: 'JPY'
+      })
+    )
+    const buyService = jest.spyOn(service, 'bidDips')
+    const clearOrders = jest.spyOn(service, 'clear')
+    const response = await controller.makeBuyDipOrders(dipReq)
+
+    expect(getBalance).toBeCalled()
+    expect(clearOrders).toBeCalledTimes(1)
+    expect(buyService).toBeCalledWith(dipReq.asset, dipReq.denominator, dipReq.dip)
+    expect(response).toEqual({ status: 200, data: 'OK' })
+  })
+
+  it('Should not buy the dip when requests are failing', async () => {
+    jest.spyOn(httpClient, 'post').mockReturnValue(of(orderResponse))
+    const getBalance = jest.spyOn(service, 'getBalance').mockResolvedValueOnce(allAsset)
+    jest.spyOn(service, 'getPrice').mockImplementation(() => {
+      throw new Error('')
+    })
+    const buyService = jest.spyOn(service, 'bidDips')
+    const clearOrders = jest.spyOn(service, 'clear')
+    await expect(controller.makeBuyDipOrders(dipReq)).rejects.toThrow()
+
+    expect(getBalance).toBeCalled()
+    expect(clearOrders).toBeCalledTimes(2)
+    expect(buyService).toBeCalledWith(dipReq.asset, dipReq.denominator, dipReq.dip)
+  })
+
+  it('Should not buy the dip when request is wrong', async () => {
+    const failDipReq = Object.assign({}, dipReq)
+    failDipReq.dip = []
+    await expect(controller.makeBuyDipOrders(failDipReq)).rejects.toThrow()
   })
 })
