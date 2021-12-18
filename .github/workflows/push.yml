@@ -55,4 +55,4 @@ jobs:
           echo '${{ secrets.SSH_PASSWORD }}' | rm -rf 
           echo '${{ secrets.SSH_PASSWORD }}' | install --production
           cp src/services/configs/*.yaml dist/services/configs/
-          echo '${{ secrets.SSH_PASSWORD }}' | yarn start:prod 2>&1
+          echo '${{ secrets.SSH_PASSWORD }}' | yarn start:prod >/dev/null 2>&1
