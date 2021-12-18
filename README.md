@@ -93,8 +93,10 @@ To connect to the exchange market we need to set the credentials variables
 Ex: in /cryptobot/src/services/configs/config.binance.e2e.yaml
 we have two global variables:
 
-- BINANCE_SECRET
-- BINANCE_APIKEY
+- EXCHANGE_NAME=kraken
+- EXCHANGE_SECRET=
+- EXCHANGE_APIKEY=
+- EXCHANGE_CONFIGFILE=config.kraken.yaml
 
 This variables must be set here:
 

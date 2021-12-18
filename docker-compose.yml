@@ -24,8 +24,8 @@ services:
       - NODE_ENV=development
       - PORT=3005
       - GUARD=none
-      - EXCHANGE=binance
-      - CONFIGFILE=config.binance.e2e.yaml
+      - EXCHANGE_NAME=binance
+      - EXCHANGE_CONFIGFILE=config.binance.yaml
 
 networks:
   nesjs-network:

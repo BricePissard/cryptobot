@@ -1,18 +1,10 @@
 import { Injectable } from '@nestjs/common'
-import { SecretManagerServiceClient } from '@google-cloud/secret-manager'
+import { Logger, LoggerTypes } from 'src/utils'
 
 @Injectable()
 export class SecretsService {
-  private readonly client
-  constructor() {
-    this.client = new SecretManagerServiceClient()
-  }
-
   async getSecret(secret: string, version = 'latest'): Promise<string> {
-    const projectID = await this.client.getProjectId()
-    const [accessResponse] = await this.client.accessSecretVersion({
-      name: `projects/${projectID}/secrets/${secret}/versions/${version}`
-    })
-    return accessResponse.payload.data.toString('utf8')
+    Logger.trace(LoggerTypes.SERVICE, 'SecretsService.getSecret()', { secret: secret, version: version })
+    return ''
   }
 }

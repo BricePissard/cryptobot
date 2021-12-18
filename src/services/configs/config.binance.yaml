@@ -1,7 +1,7 @@
 # @see https://console.cloud.google.com/security/secret-manager?project=cryprobot
 configurations:
-  secret_keyname: 'BINANCE_SECRET'
-  api_keyname: 'BINANCE_APIKEY'
+  secret_keyname: 'EXCHANGE_SECRET'
+  api_keyname: 'EXCHANGE_APIKEY'
   trade_with: 'USDT' # USDC | USDT
   rebalance:
     - 'BTC:40'

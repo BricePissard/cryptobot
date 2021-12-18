@@ -1,16 +1,23 @@
 /* eslint-disable no-magic-numbers */
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
+import { Logger, LoggerTypes } from 'src/utils'
 import { BotRequest } from '../../exchange/entities/exchange'
 
 @Injectable()
 export class BotConfigService {
+  private config
   private readonly client
   // eslint-disable-next-line no-unused-vars
   constructor(private configs: ConfigService) {}
 
   get settings(): any {
-    return this.configs.get<any>('configurations')
+    if (!this.config) {
+      this.config = this.configs.get<any>('configurations')
+
+      Logger.trace(LoggerTypes.SERVICE, 'BotConfigService.settings()', { config: this.config })
+    }
+    return this.config
   }
 
   get rebalanceProfiles(): any[] | null {
@@ -24,14 +31,25 @@ export class BotConfigService {
           asset: item[0],
           ratio: parseInt(item[1], TEN) / PERCENT
         }))
+
+      Logger.trace(LoggerTypes.SERVICE, 'BotConfigService.rebalanceProfiles()', {
+        rebalanceProfiles: rebalanceProfiles
+      })
+
       return rebalanceProfiles
     } catch (error) {
+      Logger.trace(LoggerTypes.WARN, 'BotConfigService.rebalanceProfiles()', { error: error })
       return null
     }
   }
 
   get tradeCurrency(): string {
     const rebalanceTo = this.configs.get<string>('configurations.trade_with')
+
+    Logger.trace(LoggerTypes.SERVICE, 'BotConfigService.tradeCurrency()', {
+      rebalanceTo: rebalanceTo
+    })
+
     return rebalanceTo
   }
 
@@ -44,8 +62,14 @@ export class BotConfigService {
           asset: item[0],
           denominator: item[1]
         }))
+
+      Logger.trace(LoggerTypes.SERVICE, 'BotConfigService.tradingPairs()', {
+        pairs: pairs
+      })
+
       return pairs
     } catch (error) {
+      Logger.trace(LoggerTypes.WARN, 'BotConfigService.tradingPairs()', { error: error })
       return null
     }
   }

@@ -16,11 +16,11 @@ describe('AppController (e2e)', () => {
     getSecret: (secret: string) => {
       return new Promise((res, rej) => {
         switch (secret) {
-          case 'BINANCE_SECRET':
-            res(process.env.BINANCE_SECRET)
+          case 'EXCHANGE_SECRET':
+            res(process.env.EXCHANGE_BINANCE_SECRET)
             return
-          case 'BINANCE_APIKEY':
-            res(process.env.BINANCE_APIKEY)
+          case 'EXCHANGE_APIKEY':
+            res(process.env.EXCHANGE_BINANCE_APIKEY)
             return
           default:
             rej()

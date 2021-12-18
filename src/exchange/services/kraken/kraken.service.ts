@@ -11,6 +11,7 @@ import {
   // Balance, 
   OrderType
 } from '../../entities/exchange'
+import { Logger, LoggerTypes } from 'src/utils'
 
   // @see https://www.kraken.com/u/security/api/new
 const API_KEY = 'FXvnTEsd6dehOA1h1NSZQbhOp3OrA6FwE5nJ//5wR3Etp/4ZGVo9kjfT' 
@@ -47,28 +48,21 @@ export class KrakenExchange extends ExchangeService {
       timeout: 5000
     })
 
-    console.log('## KrakenExchange.constructor()', this.configs.settings, this.kraken)
+    Logger.trace(LoggerTypes.SERVICE, 'KrakenExchange.constructor()', { settings: this.configs.settings, kraken: this.kraken })
   }
 
   getLotSize(ofProduct: string, priceIn: string) {
+    Logger.trace(LoggerTypes.SERVICE, 'KrakenExchange.getLotSize()', { ofProduct: ofProduct, priceIn: priceIn })
     return true
   }
 
   getTime() {
-    // const path = '/api/v3/time'
-    // const response = this.httpService.get(`${this.baseURL}${path}`)
-    // const time = response.pipe(
-    //   map((x) => x.data.serverTime),
-    //   catchError((err) => {
-    //     console.error('failed to get server time.')
-    //     return throwError(err)
-    //   })
-    // )
-    // return time.toPromise()
+    Logger.trace(LoggerTypes.SERVICE, 'KrakenExchange.getTime()')
   }
 
   async getPrice(ofProduct: string, priceIn: string) {
     const assets = await this.kraken.assets()
+    Logger.trace(LoggerTypes.SERVICE, 'KrakenExchange.getPrice()', { ofProduct: ofProduct, priceIn: priceIn, assets: assets })
     return assets
   }
 
