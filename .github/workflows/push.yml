@@ -49,10 +49,10 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd ~/cryptobot
-          echo '${{ secrets.SSH_PASSWORD }}' | sudo su
           fuser -k 3005/tcp
           rm *.lock
           git pull origin main
           yarn install
           cp src/services/configs/*.yaml dist/services/configs/
-          yarn start:prod >/dev/null 2>&1
+          yarn build
+          yarn start:prod >/dev/null 2>&1 &

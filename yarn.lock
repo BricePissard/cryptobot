@@ -1538,20 +1538,13 @@ buffer-from@^1.0.0:
   resolved "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz"
   integrity sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==
 
-buffer@^5.1.0, buffer@^5.5.0:
+buffer@^5.5.0:
   version "5.7.1"
   resolved "https://registry.npmjs.org/buffer/-/buffer-5.7.1.tgz"
   integrity sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==
   dependencies:
     base64-js "^1.3.1"
     ieee754 "^1.1.13"
-
-bufferutil@^4.0.3:
-  version "4.0.5"
-  resolved "https://registry.npmjs.org/bufferutil/-/bufferutil-4.0.5.tgz"
-  integrity sha512-HTm14iMQKK2FjFLRTM5lAVcyaUzOnqbPtesFIvREgXpJHdQm8bWS+GkQgIkfaBYRHuCnea7w8UVNfwiAQhlr9A==
-  dependencies:
-    node-gyp-build "^4.3.0"
 
 busboy@^0.2.11:
   version "0.2.14"
@@ -1843,13 +1836,6 @@ cosmiconfig@^6.0.0:
     parse-json "^5.0.0"
     path-type "^4.0.0"
     yaml "^1.7.2"
-
-crc@^3.8.0:
-  version "3.8.0"
-  resolved "https://registry.npmjs.org/crc/-/crc-3.8.0.tgz"
-  integrity sha512-iX3mfgcTMIq3ZKLIsVFAbv7+Mc10kxabAGQb8HvjA1o3T1PIYprbakQ65d3I+2HGHt6nSKkM9PYjgoJO2KcFBQ==
-  dependencies:
-    buffer "^5.1.0"
 
 create-require@^1.1.0:
   version "1.1.1"
@@ -3786,27 +3772,10 @@ node-fetch@^2.6.1:
   dependencies:
     whatwg-url "^5.0.0"
 
-node-gyp-build@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.npmjs.org/node-gyp-build/-/node-gyp-build-4.3.0.tgz"
-  integrity sha512-iWjXZvmboq0ja1pUGULQBexmxq8CV4xBhX7VDOTbL7ZR4FOowwY/VOtRxBN/yKxmdGoIp4j5ysNT4u3S2pDQ3Q==
-
 node-int64@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/node-int64/-/node-int64-0.4.0.tgz"
   integrity sha1-h6kGXNs1XTGC2PlM4RGIuCXGijs=
-
-node-kraken-api@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.npmjs.org/node-kraken-api/-/node-kraken-api-2.1.0.tgz"
-  integrity sha512-7hgBFurFedASQMFJaII0k7Jt92xtFQNNjpJ41e/0c8qXfTgHNFYKVNtd8HqYi73NrrTPDrIgGc7T5NnoAR+QAQ==
-  dependencies:
-    crc "^3.8.0"
-    ts-ev "^0.3.0"
-    ws "^8.2.2"
-  optionalDependencies:
-    bufferutil "^4.0.3"
-    utf-8-validate "^5.0.5"
 
 node-releases@^2.0.1:
   version "2.0.1"
@@ -4753,11 +4722,6 @@ tree-kill@1.2.2:
   resolved "https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
-ts-ev@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.npmjs.org/ts-ev/-/ts-ev-0.3.0.tgz"
-  integrity sha512-auTmqG3pJLU0WxZex+wk1gGAcJWVpCmCaiXotwNPICgKcXRDVMlaTcXXwPzZz9YxAEe8c04WdJu/eUrofTGCkw==
-
 ts-jest@^27.1.2:
   version "27.1.2"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-27.1.2.tgz#5991d6eb3fd8e1a8d4b8f6de3ec0a3cc567f3151"
@@ -4926,13 +4890,6 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
-
-utf-8-validate@^5.0.5:
-  version "5.0.7"
-  resolved "https://registry.npmjs.org/utf-8-validate/-/utf-8-validate-5.0.7.tgz"
-  integrity sha512-vLt1O5Pp+flcArHGIyKEQq883nBt8nN8tVBcoL0qUXj2XT1n7p70yGIq2VK98I5FdZ1YHc0wk/koOnHjnXWk1Q==
-  dependencies:
-    node-gyp-build "^4.3.0"
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
@@ -5142,11 +5099,6 @@ ws@^7.4.6:
   version "7.5.6"
   resolved "https://registry.npmjs.org/ws/-/ws-7.5.6.tgz"
   integrity sha512-6GLgCqo2cy2A2rjCNFlxQS6ZljG/coZfZXclldI8FB/1G3CCI36Zd8xy2HrFVACi8tfk5XrgLQEk+P0Tnz9UcA==
-
-ws@^8.2.2:
-  version "8.3.0"
-  resolved "https://registry.npmjs.org/ws/-/ws-8.3.0.tgz"
-  integrity sha512-Gs5EZtpqZzLvmIM59w4igITU57lrtYVFneaa434VROv4thzJyV6UjIL3D42lslWlI+D4KzLYnxSwtfuiO79sNw==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"

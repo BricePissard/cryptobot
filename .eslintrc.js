@@ -163,9 +163,9 @@ module.exports = {
     'no-dupe-class-members': ERROR,
     'no-this-before-super': ERROR,
     'no-var': WARN,
-    'object-shorthand': [WARN, 'never'],
+    'object-shorthand': OFF,
     'prefer-arrow-callback': WARN,
-    'prefer-spread': WARN,
+    'prefer-spread': OFF,
     'prefer-template': WARN,
     'require-yield': ERROR,
 
