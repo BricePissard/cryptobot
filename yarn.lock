@@ -824,10 +824,10 @@
     lodash "4.17.21"
     uuid "8.3.2"
 
-"@nestjs/core@^8.2.4":
-  version "8.2.4"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-8.2.4.tgz#d8cb54f7bd5530de1f162a649c2b63852c91c8df"
-  integrity sha512-CWyS5Rj5tUxwtTGKkGei+ii6CvkGNhuo5hbKGBkCK3McfAMwpCq2pYDjSEFAqn6R2ylL4H3U5H9WU6OWJD1cVw==
+"@nestjs/core@^8.2.5":
+  version "8.2.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-8.2.5.tgz#3c4322bf72bbb934909d5d43218b0f321ec949b8"
+  integrity sha512-R0vp0VlAQFP7qBTZMzMspwOCO6MpsMJON/MsrfHVGgZS5Sd5DInfboWhe2COPnAr+VAT0o4FAKObW08Pdb5hMg==
   dependencies:
     "@nuxtjs/opencollective" "0.3.2"
     fast-safe-stringify "2.1.1"
@@ -859,10 +859,10 @@
     jsonc-parser "3.0.0"
     pluralize "8.0.0"
 
-"@nestjs/testing@^8.2.4":
-  version "8.2.4"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.2.4.tgz#75619de2d362c8ea2a346f1ef14457e875840dc5"
-  integrity sha512-kRpLbb/y4TFzqP7iuQd3qiCg+auwdnj4qWeBDIW5ugqdnfCjgk/TzlbeTZF08mPYyjvHscg+0bMHri6r0Pm3sQ==
+"@nestjs/testing@^8.2.5":
+  version "8.2.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.2.5.tgz#48bd875649f606a5aec856573b5c16795473cc0f"
+  integrity sha512-M0uGfmPb5hc3k8jEHW2/Ilia+BYnxZoZ4MmqrWlLND/zTNSSJZJXUISLDtukka9/GAzGTlyQ3yQJMGL+GjnqXA==
   dependencies:
     optional "0.1.4"
     tslib "2.3.1"
@@ -1797,10 +1797,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.67.17:
-  version "1.67.17"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.67.17.tgz#903482b9f35bd9f90464ecbf621438e5ae865b55"
-  integrity sha512-ZWRIHX0Kp8aVP1r7ZQB+yI27FTGqLQXFibH1S/yuTRcLD90ypUFFwcJDMW5e1n5UbvndmV/ckxqQyKz+I+Zp4g==
+ccxt@^1.67.31:
+  version "1.67.31"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.67.31.tgz#f0c2ea25f5e57047214152863f0a1a5fadad8b70"
+  integrity sha512-WA52RERCc9A3jltXEcYMHUCtaJtFLPTLLiA9mkUrmOCkQyuP6QDvTMKXVuZ1gkvW0Y304y9jmPSo4d5Y+WS88Q==
 
 chalk@3.0.0:
   version "3.0.0"
