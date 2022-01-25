@@ -1083,10 +1083,10 @@
   resolved "https://registry.npmjs.org/@types/mime/-/mime-1.3.2.tgz"
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
-"@types/node@*", "@types/node@^17.0.10":
-  version "17.0.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.10.tgz#616f16e9d3a2a3d618136b1be244315d95bd7cab"
-  integrity sha512-S/3xB4KzyFxYGCppyDt68yzBU9ysL88lSdIah4D6cptdcltc4NCPCAMc0+PCpg/lLIyC7IPvj2Z52OJWeIUkog==
+"@types/node@*", "@types/node@^17.0.11":
+  version "17.0.11"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.11.tgz#e0630988ea4c75efde22d5b099360ecfe494160f"
+  integrity sha512-TgLsFcuinMobmML3PsILoRJq/h11/qS7UDlak1LUsazJcvJeKejEBuI1m5X2pBnMBF5T5HRAvtcnr4cV5nvc8Q==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1170,14 +1170,14 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.10.0":
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.10.0.tgz#8f59e036f5f1cffc178cacbd5ccdd02aeb96c91c"
-  integrity sha512-pJB2CCeHWtwOAeIxv8CHVGJhI5FNyJAIpx5Pt72YkK3QfEzt6qAlXZuyaBmyfOdM62qU0rbxJzNToPTVeJGrQw==
+"@typescript-eslint/parser@^5.10.1":
+  version "5.10.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.10.1.tgz#4ce9633cc33fc70bc13786cb793c1a76fe5ad6bd"
+  integrity sha512-GReo3tjNBwR5RnRO0K2wDIDN31cM3MmDtgyQ85oAxAmC5K3j/g85IjP+cDfcqDsDDBf1HNKQAD0WqOYL8jXqUA==
   dependencies:
-    "@typescript-eslint/scope-manager" "5.10.0"
-    "@typescript-eslint/types" "5.10.0"
-    "@typescript-eslint/typescript-estree" "5.10.0"
+    "@typescript-eslint/scope-manager" "5.10.1"
+    "@typescript-eslint/types" "5.10.1"
+    "@typescript-eslint/typescript-estree" "5.10.1"
     debug "^4.3.2"
 
 "@typescript-eslint/scope-manager@5.10.0":
@@ -1817,10 +1817,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.70.24:
-  version "1.70.24"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.70.24.tgz#2411ca899465e810dfd3cfebc4ceb4dd03a004cb"
-  integrity sha512-8L62Vqc7ij286VJyd8vp5GYXT8k3uPYXc8hkr6Rs8B23wOjgmpkK1ijMl1AomrU26jFeAxRuxXq+v641b1yWhA==
+ccxt@^1.70.45:
+  version "1.70.45"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.70.45.tgz#3cd1af55a7e315c79fbf726ecdabcdcb0fb49cee"
+  integrity sha512-41iUAV04nHAtykmOVhv/jQP//6g9JpAUCjb0/I5UeAbAnM4yFRRsKp0CsSi2ykPWwXo0ttgtsIygpgSI0y+E9A==
 
 chalk@3.0.0:
   version "3.0.0"
@@ -2224,10 +2224,10 @@ dotenv@10.0.0:
   resolved "https://registry.npmjs.org/dotenv/-/dotenv-10.0.0.tgz"
   integrity sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==
 
-dotenv@^14.2.0:
-  version "14.2.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-14.2.0.tgz#7e77fd5dd6cff5942c4496e1acf2d0f37a9e67aa"
-  integrity sha512-05POuPJyPpO6jqzTNweQFfAyMSD4qa4lvsMOWyTRTdpHKy6nnnN+IYWaXF+lHivhBH/ufDKlR4IWCAN3oPnHuw==
+dotenv@^14.3.0:
+  version "14.3.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-14.3.0.tgz#40f537fe90e229d35361c66cf432903e0db49001"
+  integrity sha512-PCTcOQSXVo9FI1dB7AichJXMEvmiGCq0gnCpjfDUc8505uR+2MeLXWe+Ue4PN5UXa2isHSa78sr7L59fk+2mnQ==
 
 ee-first@1.1.1:
   version "1.1.1"
