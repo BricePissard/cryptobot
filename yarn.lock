@@ -1170,14 +1170,14 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.10.1":
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.10.1.tgz#4ce9633cc33fc70bc13786cb793c1a76fe5ad6bd"
-  integrity sha512-GReo3tjNBwR5RnRO0K2wDIDN31cM3MmDtgyQ85oAxAmC5K3j/g85IjP+cDfcqDsDDBf1HNKQAD0WqOYL8jXqUA==
+"@typescript-eslint/parser@^5.10.2":
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.10.2.tgz#b6076d27cc5499ce3f2c625f5ccde946ecb7db9a"
+  integrity sha512-JaNYGkaQVhP6HNF+lkdOr2cAs2wdSZBoalE22uYWq8IEv/OVH0RksSGydk+sW8cLoSeYmC+OHvRyv2i4AQ7Czg==
   dependencies:
-    "@typescript-eslint/scope-manager" "5.10.1"
-    "@typescript-eslint/types" "5.10.1"
-    "@typescript-eslint/typescript-estree" "5.10.1"
+    "@typescript-eslint/scope-manager" "5.10.2"
+    "@typescript-eslint/types" "5.10.2"
+    "@typescript-eslint/typescript-estree" "5.10.2"
     debug "^4.3.2"
 
 "@typescript-eslint/scope-manager@5.10.1":
@@ -1817,10 +1817,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.71.46:
-  version "1.71.46"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.71.46.tgz#f032007ce8f54e14a1e58ac68a2344e0bdfd06aa"
-  integrity sha512-18RMh2jhxwHXMz2kOiyvwNHp54FMrr3clv/tm1gg/nu0RGbyGGCkNIZtc6o+r1F3MXEtli4JWW5P56U+SZ2+Jw==
+ccxt@^1.71.58:
+  version "1.71.58"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.71.58.tgz#a64a17822cf364c0c3f9667ea89d16b8516f8d78"
+  integrity sha512-4kBWpBt2HMdxLoGFugmUOkNk4FRYzQueDQcS+YDbT7KqzSkeDDF8/uClZCalt2Rs5vogusHKhQRqBgDotMp+/Q==
 
 chalk@3.0.0:
   version "3.0.0"
