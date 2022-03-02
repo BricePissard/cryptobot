@@ -1772,10 +1772,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.74.3:
-  version "1.74.3"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.74.3.tgz#3bb88cd5b057358134334e7d874809afecab01ba"
-  integrity sha512-cE+j0YcoFpnxS/rqGbH0zKZcOV/5Mw7D1UErzRfx5sBpK0wip/LwsoYn5oDW3811Ag/QW2QKtvrDVEoLj5mxAw==
+ccxt@^1.74.63:
+  version "1.74.63"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.74.63.tgz#0a618c4f9d636c80ac6be53b064a9716d872a32f"
+  integrity sha512-dxDD6kQ/N3LnFIrVOEvyRRRH+DBVF1jqQ0xTVH4beEOniur6aRtQxqdLfXTmf7gi2wRCOd3Qliok6q44beBIcw==
 
 chalk@3.0.0:
   version "3.0.0"
@@ -4918,10 +4918,10 @@ ts-jest@^27.1.3:
     semver "7.x"
     yargs-parser "20.x"
 
-ts-loader@^9.2.3:
-  version "9.2.6"
-  resolved "https://registry.npmjs.org/ts-loader/-/ts-loader-9.2.6.tgz"
-  integrity sha512-QMTC4UFzHmu9wU2VHZEmWWE9cUajjfcdcws+Gh7FhiO+Dy0RnR1bNz0YCHqhI0yRowCE9arVnNxYHqELOy9Hjw==
+ts-loader@^9.2.7:
+  version "9.2.7"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-9.2.7.tgz#948654099ca96992b62ec47bd9cee5632006e101"
+  integrity sha512-Fxh44mKli9QezgbdCXkEJWxnedQ0ead7DXTH+lfXEPedu+Y9EtMJ2aQ9G3Dj1j7Q612E8931rww8NDZha4Tibg==
   dependencies:
     chalk "^4.1.0"
     enhanced-resolve "^5.0.0"
