@@ -792,12 +792,12 @@
     webpack "5.66.0"
     webpack-node-externals "3.0.0"
 
-"@nestjs/common@^8.4.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-8.4.0.tgz#b8649836cfe74bc0700eb8a1c2a4d4d7997c66f8"
-  integrity sha512-uvm1Ccw0qRka/Gd5Mo5A2MQo9ItwewPes1fE2SBboennPojoiJ4A3iKirtlPuxsL+HQ4oD5eO02OsDyLYL2z6w==
+"@nestjs/common@^8.4.1":
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-8.4.1.tgz#2a0d166d29beb5bf740dfdddc62c7bd04c39c53f"
+  integrity sha512-g6beLHvJ2cCIdlW8Uui8rQh3+oxLOBLzDIk3yWH4ocp2HEgOJwF0iUv/pk33tFuwbXESIGMK8K165cpZUjNoxA==
   dependencies:
-    axios "0.26.0"
+    axios "0.26.1"
     iterare "1.2.1"
     tslib "2.3.1"
     uuid "8.3.2"
@@ -825,10 +825,10 @@
     tslib "2.3.1"
     uuid "8.3.2"
 
-"@nestjs/platform-express@^8.4.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-8.4.0.tgz#a0d47257bceff4e9d2eee35ae251da66d14b733b"
-  integrity sha512-vuMKBsjkqNjXPWI79r+509o2HARZwr8oTcu8pmOFRc21TI5M1DC6roK3Wk5gxSxF0V/bgtrjqe26ARZtlWBaAQ==
+"@nestjs/platform-express@^8.4.1":
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-8.4.1.tgz#4720c95eaea642237761018ee33b7569bb5ebb7c"
+  integrity sha512-c18zuhoegJsS1vZueGaNyvU8mLyFtS+6FJ2WAzDOXNpchpq0okrEPdKBifIisWuxgffQYKIufoK73vEfXSfDLg==
   dependencies:
     body-parser "1.19.2"
     cors "2.8.5"
@@ -847,10 +847,10 @@
     jsonc-parser "3.0.0"
     pluralize "8.0.0"
 
-"@nestjs/testing@^8.4.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.4.0.tgz#c727fc427d753f106d1c9b11383858a24518170d"
-  integrity sha512-Gk9OW4RpiIGDOROHS7O271uJEpIddQP94zlkPOVOu3HPUxntfKbmDU4cDaCqC0PQ9Jtj71C0H1j9RS8ituYLAw==
+"@nestjs/testing@^8.4.1":
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.4.1.tgz#b1cad0b0e2f779b6bbd5ef1bb5a16cf59951fb4e"
+  integrity sha512-LOvsLuNh2eRwAtyeoIZWmUZ08wt7QrPrKQujWuRyv+vBYtC+FLHjqreWLpwG2yulNEoQs9Qlr2ubPvFGT1953g==
   dependencies:
     optional "0.1.4"
     tslib "2.3.1"
@@ -1158,14 +1158,14 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.14.0":
-  version "5.14.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.14.0.tgz#7c79f898aa3cff0ceee6f1d34eeed0f034fb9ef3"
-  integrity sha512-aHJN8/FuIy1Zvqk4U/gcO/fxeMKyoSv/rS46UXMXOJKVsLQ+iYPuXNbpbH7cBLcpSbmyyFbwrniLx5+kutu1pw==
+"@typescript-eslint/parser@^5.15.0":
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.15.0.tgz#95f603f8fe6eca7952a99bfeef9b85992972e728"
+  integrity sha512-NGAYP/+RDM2sVfmKiKOCgJYPstAO40vPAgACoWPO/+yoYKSgAXIFaBKsV8P0Cc7fwKgvj27SjRNX4L7f4/jCKQ==
   dependencies:
-    "@typescript-eslint/scope-manager" "5.14.0"
-    "@typescript-eslint/types" "5.14.0"
-    "@typescript-eslint/typescript-estree" "5.14.0"
+    "@typescript-eslint/scope-manager" "5.15.0"
+    "@typescript-eslint/types" "5.15.0"
+    "@typescript-eslint/typescript-estree" "5.15.0"
     debug "^4.3.2"
 
 "@typescript-eslint/scope-manager@5.14.0":
@@ -1595,6 +1595,13 @@ axios@0.26.0:
   dependencies:
     follow-redirects "^1.14.8"
 
+axios@0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"
+  integrity sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==
+  dependencies:
+    follow-redirects "^1.14.8"
+
 babel-jest@^27.5.1:
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.5.1.tgz#a1bf8d61928edfefd21da27eb86a695bfd691444"
@@ -1795,10 +1802,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.76.5:
-  version "1.76.5"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.76.5.tgz#63f92b5541edaae78f83d3c0abf7ae02f9aeb023"
-  integrity sha512-HBF4afXCCSCixY98G5qyneeT+co1QiSSyl3PmQJqiZEmbyx40O8LNFId8oIq/nxubLnKkYeWpR5G/lwpkm72Sw==
+ccxt@^1.76.17:
+  version "1.76.17"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.76.17.tgz#10fed9014ee4af80cf483f0d6343cc258fb702d5"
+  integrity sha512-SpW+Iq9uwaCQovilrnAJVPqmvBl9y+jeSpQZ5GugLQbLj80MwL77C5cG7WSZD+CmSyFkZ9WXuEw5bWZwDw7MGw==
 
 chalk@3.0.0:
   version "3.0.0"
