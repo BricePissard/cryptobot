@@ -30,7 +30,7 @@
     "@nestjs/core": "^8.4.2",
     "@nestjs/platform-express": "^8.4.2",
     "@types/js-yaml": "^4.0.1",
-    "ccxt": "^1.77.11",
+    "ccxt": "^1.77.36",
     "dotenv": "^16.0.0",
     "gaxios": "^4.3.2",
     "js-yaml": "^4.1.0",
