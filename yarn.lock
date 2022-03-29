@@ -1175,14 +1175,14 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.16.0":
-  version "5.16.0"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.16.0.tgz#e4de1bde4b4dad5b6124d3da227347616ed55508"
-  integrity sha512-fkDq86F0zl8FicnJtdXakFs4lnuebH6ZADDw6CYQv0UZeIjHvmEw87m9/29nk2Dv5Lmdp0zQ3zDQhiMWQf/GbA==
+"@typescript-eslint/parser@^5.17.0":
+  version "5.17.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.17.0.tgz#7def77d5bcd8458d12d52909118cf3f0a45f89d5"
+  integrity sha512-aRzW9Jg5Rlj2t2/crzhA2f23SIYFlF9mchGudyP0uiD6SenIxzKoLjwzHbafgHn39dNV/TV7xwQkLfFTZlJ4ig==
   dependencies:
-    "@typescript-eslint/scope-manager" "5.16.0"
-    "@typescript-eslint/types" "5.16.0"
-    "@typescript-eslint/typescript-estree" "5.16.0"
+    "@typescript-eslint/scope-manager" "5.17.0"
+    "@typescript-eslint/types" "5.17.0"
+    "@typescript-eslint/typescript-estree" "5.17.0"
     debug "^4.3.2"
 
 "@typescript-eslint/scope-manager@5.16.0":
@@ -1819,10 +1819,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.77.36:
-  version "1.77.36"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.77.36.tgz#e5454588d2545c1c0f39f7427a5ed5de10876a6e"
-  integrity sha512-ERR0OoYsR8SBDIhns7zQBQw0DczKh9PFXnZU1kc80gKnPCCWKvywJW7kkycpIlrbin0cBgh3/FbNEtrxwBmxBA==
+ccxt@^1.77.40:
+  version "1.77.40"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.77.40.tgz#ffab77f5a16fb71858f4ac4ccdf32f9678459d51"
+  integrity sha512-Z4y/cedlkB0pc5Hfuzyr6lURidCNqrYWEMyq4WLN4fQIrIE7veniHBjurg7yLN/iTsYsRa+Uvvd849Ue27l+Iw==
 
 chalk@3.0.0:
   version "3.0.0"
