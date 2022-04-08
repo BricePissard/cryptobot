@@ -848,21 +848,21 @@
     multer "1.4.4"
     tslib "2.3.1"
 
-"@nestjs/schematics@^8.0.3", "@nestjs/schematics@^8.0.9":
-  version "8.0.9"
-  resolved "https://registry.yarnpkg.com/@nestjs/schematics/-/schematics-8.0.9.tgz#796e06c14ba43930abb12cde0e0144b16925a6a3"
-  integrity sha512-2YNRFWyQCxKaK7XTKBRKecERKQj2cg9FLxsHwAf9beryXxVmciTmHV0gHCW7Pfatj38R50QFGPN71wuyyZIC5g==
+"@nestjs/schematics@^8.0.10", "@nestjs/schematics@^8.0.3":
+  version "8.0.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/schematics/-/schematics-8.0.10.tgz#4f951ea1ac94721ba6a6ccfae6461f8b22949573"
+  integrity sha512-gQq/8TYjtgum+5+QuPfHHKgKxDgNLGh8mH+EJ1skOKX+GTxgt5jmg1GFmwEfiOXZUcF9thT6GsOVNKWrdO3YMg==
   dependencies:
-    "@angular-devkit/core" "13.3.1"
-    "@angular-devkit/schematics" "13.3.1"
+    "@angular-devkit/core" "13.3.2"
+    "@angular-devkit/schematics" "13.3.2"
     fs-extra "10.0.1"
     jsonc-parser "3.0.0"
     pluralize "8.0.0"
 
-"@nestjs/testing@^8.4.3":
-  version "8.4.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.4.3.tgz#2d2aa522fecb75ae9080a1abd572eb648c9c05c6"
-  integrity sha512-6+b2UCObr5onv7TG398VUdkNeU9n+f+TeTvlzmZlp9LKIAS4ZxDxwpdLDl5m/AssdkaZpfb0u755BJfKP5wbNw==
+"@nestjs/testing@^8.4.4":
+  version "8.4.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.4.4.tgz#ac58e1f4be2344823b14243072179ce13a1ebd40"
+  integrity sha512-eGj0Lbi0ONMkjDKbKQHoGX+ecGdrGRZ81I8i6fH4dx9jIR0p4MsBlW964f6Swn1MGkPm/xxomJmBWLPqZEjF7g==
   dependencies:
     optional "0.1.4"
     tslib "2.3.1"
@@ -1778,10 +1778,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.78.26:
-  version "1.78.26"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.78.26.tgz#598dc9edf4a27e854e83342d2d5812417e1435cd"
-  integrity sha512-WaBTnJ4TklHAOMwnk+t5JFfl+IDdY3GCcS6V6qroB5Gd1/3wHYGaP4+/0FD/9QqiIxVS0wiVX3P0dJlQlkDcOg==
+ccxt@^1.78.39:
+  version "1.78.39"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.78.39.tgz#5d3d9c127d4e7838cbef6955a581a129fed45217"
+  integrity sha512-7tU1fDUUmmnSW/P1SWWcxwdngybitie94S3w89eudOU5R2Mr04NIEn2bp7amq38CHuazIdOvdKHScUm+kTEwyg==
 
 chalk@3.0.0:
   version "3.0.0"
