@@ -28,7 +28,7 @@
     "@nestjs/common": "^8.4.5",
     "@nestjs/config": "^2.0.1",
     "@nestjs/core": "^8.4.4",
-    "@nestjs/platform-express": "^8.4.5",
+    "@nestjs/platform-express": "^8.4.6",
     "@types/js-yaml": "^4.0.1",
     "ccxt": "^1.84.48",
     "dotenv": "^16.0.1",
