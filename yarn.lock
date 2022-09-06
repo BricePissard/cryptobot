@@ -1812,10 +1812,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^1.93.1:
-  version "1.93.1"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.93.1.tgz#b28b113c432ae09d769526838939e02de05b5f00"
-  integrity sha512-oNH2SMEaScB5+FuVJpEbVlFrqKOVvviyS1xRBybP9HRh5eSntywqDAX86erCgOIIphQ1HNcBOZ3PnaMUaErQrw==
+ccxt@^1.93.4:
+  version "1.93.4"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.93.4.tgz#1e101770ec86cdab5d03fbd9e0cdb28ff3a10518"
+  integrity sha512-YsBACLh/w2FHrhqfPkxj8CroxHFFV+JxvgEH/f41xBqrG8lMNIr0jl0WNpCv4iTGEL5Ouyx3QYOjxOsrldvMug==
 
 chalk@3.0.0:
   version "3.0.0"
