@@ -1225,14 +1225,14 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.42.!":
-  version "5.42.1"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.42.1.tgz#3e66156f2f74b11690b45950d8f5f28a62751d35"
-  integrity sha512-kAV+NiNBWVQDY9gDJDToTE/NO8BHi4f6b7zTsVAJoTkmB/zlfOpiEVBzHOKtlgTndCKe8vj9F/PuolemZSh50Q==
+"@typescript-eslint/parser@^5.43.!":
+  version "5.43.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.43.0.tgz#9c86581234b88f2ba406f0b99a274a91c11630fd"
+  integrity sha512-2iHUK2Lh7PwNUlhFxxLI2haSDNyXvebBO9izhjhMoDC+S3XI9qt2DGFUsiJ89m2k7gGYch2aEpYqV5F/+nwZug==
   dependencies:
-    "@typescript-eslint/scope-manager" "5.42.1"
-    "@typescript-eslint/types" "5.42.1"
-    "@typescript-eslint/typescript-estree" "5.42.1"
+    "@typescript-eslint/scope-manager" "5.43.0"
+    "@typescript-eslint/types" "5.43.0"
+    "@typescript-eslint/typescript-estree" "5.43.0"
     debug "^4.3.4"
 
 "@typescript-eslint/scope-manager@5.42.1":
@@ -1247,6 +1247,14 @@
   version "5.43.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/scope-manager/-/scope-manager-5.43.0.tgz#566e46303392014d5d163704724872e1f2dd3c15"
   integrity sha512-XNWnGaqAtTJsUiZaoiGIrdJYHsUOd3BZ3Qj5zKp9w6km6HsrjPk/TGZv0qMTWyWj0+1QOqpHQ2gZOLXaGA9Ekw==
+  dependencies:
+    "@typescript-eslint/types" "5.43.0"
+    "@typescript-eslint/visitor-keys" "5.43.0"
+
+"@typescript-eslint/type-utils@5.42.1":
+  version "5.42.1"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/type-utils/-/type-utils-5.42.1.tgz#21328feb2d4b193c5852b35aabd241ccc1449daa"
+  integrity sha512-WWiMChneex5w4xPIX56SSnQQo0tEOy5ZV2dqmj8Z371LJ0E+aymWD25JQ/l4FOuuX+Q49A7pzh/CGIQflxMVXg==
   dependencies:
     "@typescript-eslint/types" "5.43.0"
     "@typescript-eslint/visitor-keys" "5.43.0"
@@ -1857,10 +1865,10 @@ caniuse-lite@^1.0.30001280:
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001285.tgz"
   integrity sha512-KAOkuUtcQ901MtmvxfKD+ODHH9YVDYnBt+TGYSz2KIfnq22CiArbUxXPN9067gNbgMlnNYRSwho8OPXZPALB9Q==
 
-ccxt@^2.1.74:
-  version "2.1.74"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-2.1.74.tgz#a0792d697b78e53b62298de1a50f8e30d698a6c2"
-  integrity sha512-otuj0t9AToxTlgrWoAY4oYOgXdy9GcsH8HA/wQnIaGIKgzPuLivcEAOqqi6qnnLSX4ct1cN5D6ZsOEjdv3hgAA==
+ccxt@^2.1.79:
+  version "2.1.79"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-2.1.79.tgz#b1e6a720008eaa94e7f6d81f954ccd4fa2460822"
+  integrity sha512-8Xs7L8Hvo6hbwtyEsjBLvvWsMm18D9R+2zOb6uVbzaTlO9WvlePzDts0tfn1azB2idRcX0Bl6D5uzJYClgxuYA==
   dependencies:
     replace-in-file "^6.3.5"
     ws "^8.8.1"
